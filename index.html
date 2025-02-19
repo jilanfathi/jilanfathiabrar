@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="photo">
+                <img src="profile.jpg" alt="Foto Profil">
+            </div>
+            <h1 id="name">Jilan Fathi Abrar</h1>
+            <p id="title">Profesi Anda</p>
+            <nav>
+                <ul>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="#experience">Pengalaman</a></li>
+                    <li><a href="#education">Pendidikan</a></li>
+                    <li><a href="#skills">Keterampilan</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <section id="contact" class="contact">
+                <h2>Kontak</h2>
+                <p>Email: <span id="email">jilanfathi@gmail.com</span></p>
+                <p>Telepon: <span id="phone">+62 822 6704 3828</span></p>
+                <p>Alamat: <span id="address">Medan</span></p>
+            </section>
+            <section id="experience" class="experience">
+                <h2>Pengalaman Kerja</h2>
+                <ul id="experience-list">
+                    <li>Magang NASA>
+                    <li>Peserta Programer Olimpic</li>
+                </ul>
+            </section>
+            <section id="education" class="education">
+                <h2>Pendidikan</h2>
+                <ul id="education-list">
+                    <li>SMAN 1 Kutacane</li>
+                    <li>Universitas Sumatera Utara</li>
+                </ul>
+            </section>
+            <section id="skills" class="skills">
+                <h2>Keterampilan</h2>
+                <ul id="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Jilan Fathi Abrar.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('nav ul li a').forEach(anchor => {
+                anchor.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+                });
+            });
+
+            const sidebar = document.querySelector(".sidebar");
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    sidebar.style.backgroundColor = "#1ABC9C";
+                } else {
+                    sidebar.style.backgroundColor = "#2C3E50";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
